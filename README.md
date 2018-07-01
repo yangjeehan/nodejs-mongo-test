@@ -1,6 +1,8 @@
 # nodejs-mongo-test
 
 # First : mongodb을 시작한다. ( 여기선 docker를 이용하여 시작 ). 
+
+<code>
 $ docker run --name mongo -p 27017:27017 -d mongo
 
 $ docker ps
@@ -40,20 +42,22 @@ db.enableFreeMonitoring()
 
 >  db
 test
+</code>
 
 # Second : nodejs 실행
 우선 해당 git에 프로젝트 다운
-$ git clone https://github.com/yangjeehan/nodejs-mongo-test.git
+``` $ git clone https://github.com/yangjeehan/nodejs-mongo-test.git ``` 
 
 해당 도커파일을 통해 이미지르 만든다.
-$ docker build -t 'nodejs-mongodb-test:yang’ 
+```  $ docker build -t 'nodejs-mongodb-test:yang’ ``` 
 
 만든 이미지를 실행한다. ( 전에 만든 mongo container을 link을 통해 연결 ) 
-$ docker run -i --link mongo -t nodejs-mongodb-test:yang /bin/bash
+``` $ docker run -i --link mongo -t nodejs-mongodb-test:yang /bin/bash ``` 
 
 만든 컨테이너에 접속하여 아래명령어 수행
-root@ee137a79dd4e:/usr/src/app# node demo_mongo_insert.js
+``` root@ee137a79dd4e:/usr/src/app# node demo_mongo_insert.js ``` 
 
+<code>
 mongodb check !
 ---
 root@b2482f6a58be:/# mongo
@@ -100,3 +104,4 @@ customers
 
 Success ! 
 ---
+</code>
