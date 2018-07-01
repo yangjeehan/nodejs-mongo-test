@@ -55,7 +55,7 @@ $ docker run -i --link mongo -t nodejs-mongodb-test:yang /bin/bash
 root@ee137a79dd4e:/usr/src/app# node demo_mongo_insert.js
 
 mongodb check !
-
+---
 root@b2482f6a58be:/# mongo
 MongoDB shell version v4.0.0
 connecting to: mongodb://127.0.0.1:27017
@@ -68,7 +68,7 @@ Server has startup warnings:
 2018-06-30T04:51:50.154+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
 2018-06-30T04:51:50.154+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
 2018-06-30T04:51:50.154+0000 I CONTROL  [initandlisten]
----
+
 Enable MongoDB's free cloud-based monitoring service to collect and display
 metrics about your deployment (disk utilization, CPU, operation statistics,
 etc).
@@ -82,6 +82,7 @@ To enable free monitoring, run the following command:
 db.enableFreeMonitoring()
 ---
 
+---
 > show databases;
 admin   0.000GB
 config  0.000GB
@@ -98,3 +99,4 @@ customers
 { "_id" : ObjectId("5b371eb7d8daba00078e2fdf"), "name" : "Company Inc", "address" : "Highway 37" }
 
 Success ! 
+---
